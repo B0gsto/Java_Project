@@ -1,10 +1,10 @@
 package com.bogdan.demo;
 
 public class Utilizator {
-    private String nume=new String();
-    private String prenume=new String();
-    private String telefon=new String();
-    private String parola=new String();
+    private  String nume;
+    private String prenume;
+    private String telefon;
+    private String parola;
 
     //Getters
         public String getNume() {
@@ -38,5 +38,15 @@ public class Utilizator {
 
     //Constructor
     public Utilizator() {
+    }
+
+    @Override
+    public String toString() {
+        return "Utilizator{" +
+                "nume='" + nume + '\'' +
+                ", prenume='" + prenume + '\'' +
+                ", telefon='" + telefon + '\'' +
+                ", parola='" + parola + '\'' +
+                '}';
     }
 }
