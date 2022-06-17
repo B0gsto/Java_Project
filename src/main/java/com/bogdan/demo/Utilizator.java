@@ -2,25 +2,33 @@ package com.bogdan.demo;
 
 public class Utilizator {
     private Long id;
-    private  String nume;
+    private String nume;
     private String prenume;
     private String telefon;
     private String parola;
 
     //Getters
-        public String getNume() {
+
+    public Long getId() {return id;}
+
+    public String getNume() {
         return nume;
     }
 
-        public String getPrenume() {
+    public String getPrenume() {
         return prenume;
     }
 
-        public String getTelefon() {
+    public String getTelefon() {
         return telefon;
     }
 
     //Setters
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public void setNume(String nume) {
         this.nume = nume;
     }
