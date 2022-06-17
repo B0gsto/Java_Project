@@ -1,6 +1,7 @@
 package com.bogdan.demo;
 
 public class Utilizator {
+    private Long id;
     private  String nume;
     private String prenume;
     private String telefon;
