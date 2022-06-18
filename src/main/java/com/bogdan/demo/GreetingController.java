@@ -11,25 +11,26 @@ import java.util.concurrent.atomic.AtomicLong;
 @RestController
 public class GreetingController {
     private static final String template = "Buna, %s!";
-    private final AtomicLong counter = new AtomicLong();
+    private Long counter= 0L;
     HashMap<Long, Utilizator> utilizatori=new HashMap<Long, Utilizator>();
     HashMap<Long, CV> cvuri=new HashMap<Long, CV>();
 
     @PostMapping("/addUser")
     public void addUser(@RequestBody Utilizator u){
-
-           utilizatori.put(counter.incrementAndGet(),u);
-           u.setId(counter.get());
-           System.out.println(u.getId());
+            counter=counter+1;
+           utilizatori.put(counter,u);
+           u.setId(counter);
+           System.out.println(counter);
     }
 
     @PostMapping("/addCV")
-    public void addCV(@RequestBody Utilizator u){
+    public void addCV(@RequestBody Long id){
 
+        Utilizator u=utilizatori.get(id);
         Date date = new Date(System.currentTimeMillis());
 
         CV c=new CV();
-
+        c.setU(u);
         c.setDatapublicarii(date);
         c.setId(u.getId());
         cvuri.put(c.getId(),c);
@@ -37,8 +38,9 @@ public class GreetingController {
 
     }
     @GetMapping("/getCVbyID/{id}")
-    public String getCVbyUser(@PathVariable Long id){
-        CV c =cvuri.get(id);
+    public String getCVbyUser(@PathVariable int id){
+        Long id1=(long) id;
+        CV c =cvuri.get(id1);
         return c.toString();
     }
     @GetMapping("/getUsers")
