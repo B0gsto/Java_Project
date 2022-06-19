@@ -10,6 +10,11 @@ public class CV {
 
     private ArrayList<String> continuturi=new ArrayList<String>();
     //Getters
+
+    public ArrayList<String> getContinuturi() {
+        return continuturi;
+    }
+
     public Long getId() {
         return id;
     }
@@ -23,6 +28,10 @@ public class CV {
     }
     //Setters
 
+    public void setContinuturi(ArrayList<String> continuturi) {
+        this.continuturi = continuturi;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -35,6 +44,7 @@ public class CV {
         this.datapublicarii = datapublicarii;
     }
 
+    //Constructor
     public CV() {
     }
     SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
