@@ -22,7 +22,6 @@ public class GreetingController {
            u.setId(counter);
            System.out.println(counter);
     }
-
     @PostMapping("/addCV")
     public void addCV(@RequestBody Long id){
 
@@ -49,4 +48,9 @@ public class GreetingController {
         return utilizatori.toString();
     }
 
+    @GetMapping("/getCVs")
+    public String getCVs()
+    {
+        return cvuri.toString();
+    }
 }

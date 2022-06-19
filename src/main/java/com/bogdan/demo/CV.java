@@ -7,6 +7,8 @@ public class CV {
     private Long id;
     private Utilizator u=new Utilizator();
     private Date datapublicarii= new Date();
+
+    private ArrayList<String> continuturi=new ArrayList<String>();
     //Getters
     public Long getId() {
         return id;
