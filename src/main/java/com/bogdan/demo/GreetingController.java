@@ -1,5 +1,6 @@
 package com.bogdan.demo;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.SimpleDateFormat;
