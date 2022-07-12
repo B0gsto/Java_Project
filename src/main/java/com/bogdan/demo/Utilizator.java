@@ -1,6 +1,14 @@
 package com.bogdan.demo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Utilizator {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nume;
     private String prenume;
@@ -52,6 +60,7 @@ public class Utilizator {
     @Override
     public String toString() {
         return "Utilizator{" +
+                "id="+id+'\''+
                 "nume='" + nume + '\'' +
                 ", prenume='" + prenume + '\'' +
                 ", telefon='" + telefon + '\'' +

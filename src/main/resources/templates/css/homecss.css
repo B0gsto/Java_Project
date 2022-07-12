@@ -1,0 +1,43 @@
+body {margin:0;background-color: black;}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+    padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a.juma{
+  padding: 15px 349px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+h1{
+    color: white;
+}
+h2{
+    color: white;
+}
+p{
+  color: white;
+}

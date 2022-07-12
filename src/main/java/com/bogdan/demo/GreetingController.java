@@ -1,5 +1,6 @@
 package com.bogdan.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,17 +12,19 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 public class GreetingController {
-    private static final String template = "Buna, %s!";
-    private Long counter= 0L;
+
+    @Autowired
+    private UtilizatorRepository utilizatorRepository;
+
+
     HashMap<Long, Utilizator> utilizatori=new HashMap<Long, Utilizator>();
     HashMap<Long, CV> cvuri=new HashMap<Long, CV>();
 
     @PostMapping("/addUser")
     public void addUser(@RequestBody Utilizator u){
-            counter=counter+1;
-           utilizatori.put(counter,u);
-           u.setId(counter);
-           System.out.println(counter);
+           utilizatorRepository.save(u);
+
+
     }
     @PostMapping("/addCV")
     public void addCV(@RequestBody Long id){
@@ -46,7 +49,9 @@ public class GreetingController {
     @GetMapping("/getUsers")
     public String getUsers()
     {
-        return utilizatori.toString();
+
+
+        return utilizatorRepository.findAll().toString();
     }
 
     @GetMapping("/getCVs")

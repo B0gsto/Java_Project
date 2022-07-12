@@ -12,4 +12,10 @@ public class ThymeleafController {
         model.addAttribute("m","Bogdan");
         return  "testing.html";
     }
+    @GetMapping("/home")
+    public  String home(Model model)
+    {
+
+        return  "home.html";
+    }
 }
