@@ -1,11 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>CV Platform</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <script th:src="@{/js/index.js}"></script>
 </head>
-<body>
-<h1>Upload your CV</h1>
-<h1>Discover new CVs</h1>
+
+<body onselectstart="return false" unselectable="on">
+
+<h1 class="logo1" unselectable="on" onselectstart="return false">The CV that gets the job (done)</h1>
+<h3 class="logo2" unselectable="on" onselectstart="return false">Build your own CV</h3>
+<a href="home.html">
+    <div class="element1" onclick="sayHello()">
+        <h1>Upload your CV</h1>
+    </div>
+</a>
+<a href="home.html">
+    <div class="element2">
+        <h1>Discover new CVs</h1>
+    </div>
+</a>
+<a href="http://www.w3schools.com">
+    <div class="login">
+        <p>Sign in</p>
+    </div>
+</a>
+<a href="http://www.w3schools.com">
+    <div class="register">
+        <p>Sign up</p>
+    </div>
+</a>
+
+<img src="/SVG/wave.svg" alt="" class="imag">
 </body>
+
 </html>

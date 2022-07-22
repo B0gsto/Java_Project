@@ -1,0 +1,192 @@
+body {
+  user-select: none;
+  margin: 0;
+  overflow: hidden;
+  background-color: #7f7f7f;
+}
+
+.element1 {
+  position: absolute;
+  right: 400px;
+  top: 600px;
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 5px 50px 5px 50px;
+  text-decoration:none;
+  decoration: none;
+}
+
+.element2 {
+  position: absolute;
+  left: 400px;
+  top: 600px;
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 5px 50px 5px 50px;
+  text-decoration:none;
+  decoration: none;
+}
+
+.login {
+  position: absolute;
+  right: 220px;
+  top: 50px;
+  background: rgba(78, 78, 78, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 5px 50px 5px 50px;
+  text-decoration:none;
+  decoration: none;
+}
+
+.register {
+  position: absolute;
+  right: 25px;
+  top: 50px;
+  background: rgba(78, 78, 78, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 5px 50px 5px 50px;
+  text-decoration:none;
+  decoration: none;
+}
+
+.imag {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: -1;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+p {
+    text-decoration:none;
+    color:black;
+    font-family: sans-serif;
+    decoration: none;
+}
+
+h1 {
+    text-decoration:none;
+    color:black;
+    font-family: sans-serif;
+    decoration: none;
+}
+h3{
+    text-decoration:none;
+    color:black;
+    font-family: sans-serif;
+    decoration: none;
+}
+.login:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: -10px;
+  left: 0;
+  background-color: #b4b4b4;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  border-radius: 10px;
+}
+
+.login:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.register:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: -10px;
+  left: 0;
+  background-color: #b4b4b4;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  border-radius: 10px;
+}
+
+.register:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.element1:after{
+  content: '';
+ position: absolute;
+ width: 100%;
+ transform: scaleX(0);
+ height: 3px;
+ bottom: -10px;
+ left: 0;
+ background-color: #2a2a2a;
+ transform-origin: bottom right;
+ transition: transform 0.25s ease-out;
+ border-radius: 10px;
+}
+.element1:hover::after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.element2:after{
+  content: '';
+ position: absolute;
+ width: 100%;
+ transform: scaleX(0);
+ height: 3px;
+ bottom: -10px;
+ left: 0;
+ background-color: #2a2a2a;
+ transform-origin: bottom right;
+ transition: transform 0.25s ease-out;
+ border-radius: 10px;
+}
+.element2:hover::after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+a:visited {
+ text-decoration:none;
+ decoration: none;
+ color:black;
+}
+.logo1{
+  cursor: default;
+  top:400px;
+  right: 600px;
+  position: absolute;
+}
+.logo2{
+  cursor: default;
+  top:500px;
+  right: 750px;
+  position: absolute;
+}
+a{
+color:black;
+text-decoration:none;
+decoration: none;
+}

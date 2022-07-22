@@ -15,49 +15,38 @@ public class GreetingController {
 
     @Autowired
     private UtilizatorRepository utilizatorRepository;
+    @Autowired
+    private CVRepository cvRepository;
 
-
-    HashMap<Long, Utilizator> utilizatori=new HashMap<Long, Utilizator>();
-    HashMap<Long, CV> cvuri=new HashMap<Long, CV>();
+    HashMap<Long, Utilizator> utilizatori = new HashMap<Long, Utilizator>();
+    HashMap<Long, CV> cvuri = new HashMap<Long, CV>();
 
     @PostMapping("/addUser")
-    public void addUser(@RequestBody Utilizator u){
-           utilizatorRepository.save(u);
-
-
+    public void addUser(@RequestBody Utilizator u) {
+        utilizatorRepository.save(u);
     }
+
     @PostMapping("/addCV")
-    public void addCV(@RequestBody Long id){
-
-        Utilizator u=utilizatori.get(id);
-        Date date = new Date(System.currentTimeMillis());
-
-        CV c=new CV();
-        c.setU(u);
-        c.setDatapublicarii(date);
-        c.setId(u.getId());
-        cvuri.put(c.getId(),c);
-        System.out.println(c.getId());
-
+    public void addCV(@RequestBody Long id) {
+        CV c = new CV();
+        c.setIduser(id);
+        cvRepository.save(c);
     }
+
     @GetMapping("/getCVbyID/{id}")
-    public String getCVbyUser(@PathVariable int id){
-        Long id1=(long) id;
-        CV c =cvuri.get(id1);
+    public String getCVbyUser(@PathVariable int id) {
+        Long id1 = (long) id;
+        CV c = cvuri.get(id1);
         return c.toString();
     }
+
     @GetMapping("/getUsers")
-    public String getUsers()
-    {
-
-
+    public String getUsers() {
         return utilizatorRepository.findAll().toString();
     }
 
     @GetMapping("/getCVs")
-    public String getCVs()
-    {
+    public String getCVs() {
         return cvuri.toString();
     }
-
 }

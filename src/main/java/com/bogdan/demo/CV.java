@@ -1,17 +1,25 @@
 package com.bogdan.demo;
 
+import javax.persistence.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+@Entity
 public class CV {
+    private Date datapublicarii;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Utilizator u=new Utilizator();
-    private Date datapublicarii= new Date();
+    private Long iduser;
+    private String continuturi;
+    SimpleDateFormat formatter;
 
-    private ArrayList<String> continuturi=new ArrayList<String>();
-    //Getters
+    //--------Getters------------
+    public Long getIduser() {
+        return iduser;
+    }
 
-    public ArrayList<String> getContinuturi() {
+    public String getContinuturi() {
         return continuturi;
     }
 
@@ -19,25 +27,21 @@ public class CV {
         return id;
     }
 
-    public Utilizator getU() {
-        return u;
-    }
-
     public Date getDatapublicarii() {
         return datapublicarii;
     }
-    //Setters
 
-    public void setContinuturi(ArrayList<String> continuturi) {
+    //----------Setters------------
+    public void setIduser(Long iduser) {
+        this.iduser = iduser;
+    }
+
+    public void setContinuturi(String continuturi) {
         this.continuturi = continuturi;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public void setU(Utilizator u) {
-        this.u = u;
     }
 
     public void setDatapublicarii(Date datapublicarii) {
@@ -47,14 +51,14 @@ public class CV {
     //Constructor
     public CV() {
     }
-    SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+
     @Override
     public String toString() {
         return "CV{" +
                 "id=" + id +
-                ", u=" + u +
-                ", datapublicarii=" +formatter.format(datapublicarii) +
+                ", datapublicarii=" + formatter.format(datapublicarii) +
                 '}';
     }
+
 
 }
